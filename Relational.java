@@ -4,7 +4,7 @@ public class Relational {
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		int i = s.nextInt();
+		int i = s.nextInt();		// OUTPUT will depends on input
 		int j = s.nextInt();
 		
 		boolean isEq = (i == j);
