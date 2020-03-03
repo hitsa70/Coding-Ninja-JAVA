@@ -13,7 +13,8 @@ public class add2num {
 		short s=123;	//2 byte
 		long l=123456;	//8 byte
 		
-		//float f=14.4;		//4 byte
+		float f=14.456f;		//4 byte 
+		//here 'f' is used at the end because bydefault java takes every floating number as  double
 		double d=1.2333;		//8 byte
 	
 		char c ='a';		//2 byte
