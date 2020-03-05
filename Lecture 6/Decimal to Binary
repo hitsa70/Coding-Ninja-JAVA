@@ -1,0 +1,47 @@
+// Decimal to Binary
+// Send Feedback
+// Given a decimal number (integer N), convert it into binary and print.
+// The binary number should be in the form of an integer.
+// Note : The given input number could be large, so the corresponding binary number can exceed the integer range. So take the answer as long.
+// Input format :
+// Integer N
+// Output format :
+// Corresponding Binary number (long)
+// Sample Input 1 :
+// 12
+// Sample Output 1 :
+// 1100
+// Sample Input 2 :
+// 7
+// Sample Output 2 :
+// 111
+
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		
+
+        Scanner sc= new Scanner(System.in);
+        int decimal=sc.nextInt();
+         int num;
+       long place=1,sum=0;
+        
+       
+        while(decimal!=0)
+        {  
+            num=decimal%2;
+            //sum*=10;
+            sum=sum+(num*place);
+            place*=10;
+            decimal/=2;
+            
+        }
+       
+        
+         
+            
+            System.out.println(sum);    
+		
+	}
+}
+
