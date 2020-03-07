@@ -1,0 +1,41 @@
+
+public class Solution {
+
+	
+	public static int[] arrange(int n){
+		
+		/* Your class should be named Solution
+	 	* Don't write main().
+	 	* Don't read input, it is passed as function argument.
+	 	* Return output and don't print it.
+		* Taking input and printing output is handled automatically.
+		*/			
+        int arr[]=new int[n];
+        int temp=1;
+        int mod=n%2;
+        int temp2=n-mod;
+        if(mod==0)
+        {temp2-=2;}
+        for(int i=0;i<n;i++)
+        {    
+            if(i<n/2)
+            {arr[i]=temp;
+             temp+=2;
+            }
+            if(i==n/2)
+            {
+            arr[i]=n;
+          //   temp2-=2;
+            }
+            
+            if(i>n/2)
+            {
+            arr[i]=temp2;
+             temp2-=2;
+            }
+        
+        }
+    return arr;
+	}
+	
+}
