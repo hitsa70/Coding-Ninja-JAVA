@@ -1,0 +1,20 @@
+public class SortBinaryArray{	
+
+	public static void sortBinaryArray(int[] arr){
+		/* Your class should be named SortBinaryArray.
+		 * Don't write main().
+     		 * Don't read input, it is passed as function argument.
+     		 * Update in the given array itself. Don't return or print anything.
+     		 * Taking input and printing output is handled automatically.
+                 */
+                int sum=0;
+                for(int i=0;i<arr.length;i++)
+                {sum=sum+arr[i];}
+                for(int i=0;i<(arr.length-sum);i++)
+                {arr[i]=0;}
+                for(int i=(arr.length-sum);i<arr.length;i++)
+                {arr[i]=1;}
+        
+        
+	}
+}
