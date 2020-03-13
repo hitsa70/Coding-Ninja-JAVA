@@ -1,0 +1,90 @@
+// public class SumOfTwoArrays{	
+// Sum of two arrays
+// Send Feedback
+// Two random integer arrays are given A1 and A2, in which numbers from 0 to 9 are 
+//     present at every index (i.e. single digit integer is present at every index of both given arrays).
+// You need to find sum of both the input arrays (like we add two integers) and put the
+//     result in another array i.e. output array (output arrays should also contain only single digits at every index).
+// The size A1 & A2 can be different.
+// Note : Output array size should be 1 more than the size of bigger array and place 0 at the 
+//     0th index if there is no carry. No need to print the elements of output array.
+// Input format :
+// Line 1 : Integer n1 (A1 Size)
+// Line 2 : A1 elements (separated by space)
+// Line 3 : Integer n2 (A2 Size)
+// Line 4 : A2 elements (separated by space)
+// Output Format :
+// Output array elements (separated by space)
+// Constraints :
+// 1 <= n1, n2 <= 10^6
+// Sample Input 1:
+// 3
+// 6 2 4
+// 3
+// 7 5 6
+// Sample Output 1:
+// 1 3 8 0
+// Sample Input 2:
+// 3
+// 8 5 2
+// 2
+// 1 3
+// Sample Output 2:
+// 0 8 6 5
+    
+    
+    
+	public static int[] sumOfTwoArrays(int[] arr1, int[] arr2){
+		
+        
+        int len1=arr1.length,len2=arr2.length,len3,carry=0,sm;
+       
+        
+        
+        if(len1<=len2)
+            sm=len1;
+        else
+            sm=len2;
+        
+        
+         
+        if(len1>=len2)
+            len3=len1;
+        else
+            len3=len2;
+        
+        len3++;
+        int arr3[]=new int[len3];
+      
+        for(int i=0;i<sm;i++)
+        {
+            arr3[len3-i-1]=(arr1[len1-i-1]+arr2[len2-i-1]+carry)%10;
+           // carry=0;
+            carry=(arr1[len1-i-1]+arr2[len2-i-1]+carry)/10;
+        }
+        
+        
+        
+        if(len1>len2)
+        {    for(int i=len2;i<len1;i++)
+            {
+                arr3[len3-i-1]=(arr1[len1-i-1]+carry)%10;
+            //    carry=0;
+                carry=(arr1[len1-i-1]+carry)/10;
+            }
+        }
+        else if(len1<len2)
+        {    for(int i=len1;i<len2;i++)
+            {
+                arr3[len3-i-1]=(arr2[len2-i-1]+carry)%10;
+             //  carry=0;
+                carry=(arr2[len2-i-1]+carry)/10;
+            }
+        }
+            
+        arr3[0]+=carry;
+  
+   
+	return arr3;
+    }
+}
