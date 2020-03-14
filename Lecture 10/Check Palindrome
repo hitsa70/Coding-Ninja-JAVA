@@ -1,0 +1,40 @@
+// Check Palindrome
+// Send Feedback
+// Given a String s, check it its palindrome. Return true if string is palindrome, else return false.
+// Palindrome strings are those, where string s and its reverse is exactly same.
+// Input Format :
+//  String S
+// Output Format :
+// "true" if S is palindrome, else "false"
+// Sample Input 1 :
+// abcdcba
+// Sample Output 1 :
+// true 
+public class Solution {
+
+	public static boolean checkPalindrome(String str){
+		/* Your class should be named Solution
+		* Don't write main().
+		* Don't read input, it is passed as function argument.
+		* Return output and don't print it.
+		* Taking input and printing output is handled automatically.
+		*/
+     int i = 0, j = str.length() - 1; 
+  
+        // While there are characters toc compare 
+        while (i < j) { 
+  
+            // If there is a mismatch 
+            if (str.charAt(i) != str.charAt(j)) 
+                return false; 
+  
+            // Increment first pointer and 
+            // decrement the other 
+            i++; 
+            j--; 
+        } 
+  
+        // Given string is a palindrome 
+        return true; 
+	}
+}
