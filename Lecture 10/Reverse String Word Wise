@@ -1,0 +1,29 @@
+// Reverse String Word Wise
+// Send Feedback
+// Reverse the given string word wise. That is, the last word in given 
+// string should come at 1st place, last second word at 2nd place and so on. 
+//     Individual words should remain as it is.
+// Sample Input:
+// Welcome to Coding Ninjas
+// Sample Output:
+// Ninjas Coding to Welcome
+
+import java.util.regex.Pattern; 
+public class Solution {
+	public static String reverseWordWise(String input) {
+		// Write your code here
+                // Specifying the pattern to be searched 
+   int end=input. length() ;
+        int i=input. length()-1;
+        String output="" ;
+        while(i>=0){ 
+            if(input.charAt(i)==' ')
+               { output =output + input. substring(i + 1,end)+ " "; 
+                end=i ; 
+               }
+             i--; } 
+               output+=input.substring(i+1,end);
+               return output;
+
+	}
+}
