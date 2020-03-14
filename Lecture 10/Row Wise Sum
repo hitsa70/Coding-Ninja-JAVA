@@ -1,0 +1,52 @@
+// Row Wise Sum
+// Send Feedback
+// Given a 2D integer array of size M*N, find and print
+// the sum of ith row elements separated by space.
+// Input Format :
+// Line 1 : Two integers M and N (separated by space) 
+// Line 2 : Matrix elements of each row (separated by space)
+// Output Format :
+// Sum of every ith row elements (separated by space)
+// Constraints :
+// 1 <= M, N <= 10^3
+// Sample Input :
+// 4 2 
+// 1 2 3 4 5 6 7 8
+// Sample Output :
+// 3 7 11 15 
+
+import java.util.Scanner;
+public class Solution {
+
+	public static void main(String[] args) {
+		/* Your class should be named Solution.
+	 	* Read input as specified in the question.
+	 	* Print output as specified in the question.
+		*/
+        Scanner sc =new Scanner(System.in);
+        int M=sc.nextInt();
+        int N=sc.nextInt();
+        int arr[][]=new int[M][N];
+        
+        for(int i=0;i<M;i++)
+        {
+            for(int j=0;j<N;j++)
+            {
+                arr[i][j]=sc.nextInt();
+            }
+        }
+	
+        
+        int sum=0;
+        for(int i=0;i<M;i++)
+        {   sum=0;
+            for(int j=0;j<N;j++)
+            {
+                sum+=arr[i][j];
+            }
+            System.out.print(sum+" ");
+        }
+	
+    
+    }
+}
