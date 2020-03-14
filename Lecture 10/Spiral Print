@@ -1,0 +1,111 @@
+// Spiral Print
+// Send Feedback
+// Given an N*M 2D array, print it in spiral form. That is, first
+// you need to print the 1st row, then last column, then last row
+// and then first column and so on.
+// Print every element only once.
+// Input format :
+// Line 1 : N and M, No. of rows & No. of columns (separated by space) 
+//     followed by N*M  elements in row wise fashion.
+// Sample Input :
+//  4 4 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+// Sample Output :
+// 1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10 
+
+
+public class solution {
+
+	public static void spiralPrint(int matrix[][]){
+		// Write your code here
+        int rowStart=0;
+  int rowLength=matrix.length-1;
+   
+  int colStart=0;
+  int colLength = matrix[0].length-1;
+   
+  while(rowStart <= rowLength && colStart <= colLength){
+   
+   for (int i = rowStart; i <= colLength; i++) {
+    System.out.print(matrix[rowStart][i] + " ");
+   }
+ 
+   for (int j = rowStart+1; j <= rowLength; j++) {
+    System.out.print(matrix[j][colLength] + " ");
+   }
+    
+   if(rowStart+1 <= rowLength){
+    for (int k = colLength-1; k >= colStart; k--) {
+     System.out.print(matrix[rowLength][k] + " ");
+    }
+   }
+   if(colStart+1 <= colLength){
+    for (int k = rowLength-1; k > rowStart; k--) {
+     System.out.print(matrix[k][colStart] + " ");
+    }
+   }
+    
+   rowStart++;
+   rowLength--;
+   colStart++;
+   colLength--;
+  }
+        
+//         int top=0,left=0,right=matrix[0].length,bottom=matrix.length;
+//         int dir=0;
+//         while(left!=right && top!=bottom)
+//         {
+//             if(dir==0)
+//             {
+//                for(int i=left;i<right;i++)
+//                {
+//                    System.out.print(matrix[top][i]+" ");
+                   
+//                }
+//                 top++;
+//                 dir=1;
+//                // break;
+//             }
+            
+//             if(dir==1)
+//             {
+//                for(int i=top;i<bottom;i++)
+//                {
+//                    System.out.print(matrix[i][right-1]+" ");
+                   
+//                }
+//                 right--;
+//                 dir=2;
+//                // break;
+//             }
+
+//             if(dir==2)
+//             {
+//                for(int i=right-1;i>=left;i--)
+//                {
+//                    System.out.print(matrix[bottom-1][i]+" ");
+                   
+//                }
+//                 bottom--;
+//                 dir=3;
+//                // break;
+//             }
+            
+//             if(dir==3)
+//             {
+//                for(int i=bottom-1;i>=top;i--)
+//                {
+//                    System.out.print(matrix[i][left]+" ");
+                   
+//                }
+//                 left++;
+//                 dir=1;
+//                 //break;
+//             }
+            
+            
+            
+            
+        
+        
+	}
+}
