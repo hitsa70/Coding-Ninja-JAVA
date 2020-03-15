@@ -1,0 +1,28 @@
+// Remove Consecutive Duplicates
+// Send Feedback
+// Given a string, remove all the consecutive duplicates that are present in the given
+// string. That means, if 'aaa' is present in the string then it should become 'a' in the output string.
+// Sample Input:
+// aabccbaa
+// Sample Output:
+// abcba
+
+public class solution {
+
+	public static String removeConsecutiveDuplicates(String input) {
+	    // Write your code here
+
+        String s1=new String();
+        int len=input.length();
+        int temp=Integer.MIN_VALUE;
+        for(int i=0;i<len;i++)
+        {   
+            if(temp!=(int)input.charAt(i))
+               { s1+=input.charAt(i);
+               // j++;
+               }
+               temp=(int)input.charAt(i); 
+        }
+               return s1;
+	}
+}
