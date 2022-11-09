@@ -22,56 +22,40 @@
 // 3 6 9 1 4 7 2 8 9
 // Sample Output 2 :
 // column 2 25
-public class Solution {
 
-	
-	public static void findLargest(int input[][]){
-		
+public class Solution {
+	public static void findLargest(int mat[][]){
+		//Your code goes here
 		/* Your class should be named Solution.
 		* Don't write main() function.
 	 	* Don't read input, it is passed as function argument.
 	 	* Print output as specified in the question
 		*/
-        
-        int sum=0,largestRow=Integer.MIN_VALUE,rn=0;
-        for(int i=0;i<input.length;i++)
-        {   sum=0;
-            for(int j=0;j<input[0].length;j++)
-            {
-                sum+=input[i][j];
-            }
-            if(sum>largestRow){
-                largestRow=sum;
-                rn=i;}
-        }
-	
-    
-        int sum1=0,largestCol=Integer.MIN_VALUE,cn=0;
-        for(int j=0;j<input[0].length;j++)
-        {   sum1=0;
-            for(int i=0;i<input.length;i++)
-            {
-                sum1+=input[i][j];
-            }
-         
-            if(sum1>largestCol){
-                largestCol=sum1;
-                cn=j;}
-        }
-        
-      //  System.out.println(sum1);
-	if(largestRow>=largestCol)
-    {System.out.print("row "+rn+" "+largestRow);
-        //System.out.print(rn+" ");
-    //System.out.print(largestRow);
-    }else if(largestRow<largestCol){
-         System.out.print("column "+cn+" "+largestCol);
-        //System.out.print(cn+" ");
-    //System.out.print(largestCol);
-    }
 
-
+		int rsum = Integer. MIN_VALUE, csum = Integer. MIN_VALUE, rn = 0, cn = 0;
+		if (mat. length != 0) {
+			for (int i = 0; i < mat.length; i++) {
+				int sum = 0;
+				for (int j = 0; j < mat[0].length; j++) {
+					sum += mat[i][j];
+				}
+				if (sum > rsum) {
+					rsum = sum;
+					rn = i;
+				}
+			}
+			for (int i = 0; i < mat[0].length; i++) {
+				int sum = 0;
+				for (int j = 0; j < mat.length; j++) {
+					sum += mat[j][i];
+				}
+				if (sum > csum) {
+					csum = sum;
+					cn = i;
+				}
+			}
+		}
+		if (csum > rsum) System.out.print("column " + cn + " " + csum);
+		else System.out.print("row " + rn + " " + rsum);
 	}
-
-	
 }
